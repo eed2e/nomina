@@ -462,40 +462,9 @@ include "../conexion.php";
                     </div>
                 </nav>
                 <div class="pcoded-content">
-                    <!-- Page-header start -->
-                    <div class="page-header">
-                        <div class="page-block">
-                            <div class="row align-items-center">
-                                <div class="col-md-8">
-                                    <div class="page-header-title">
-                                        <h5 class="m-b-10">Sample Page</h5>
-                                        <p class="m-b-0">Lorem Ipsum is simply dummy text of the printing</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <ul class="breadcrumb-title">
-                                        <li class="breadcrumb-item">
-                                            <a href="index.html"> <i class="fa fa-home"></i> </a>
-                                        </li>
-                                        <li class="breadcrumb-item"><a href="#!">Pages</a>
-                                        </li>
-                                        <li class="breadcrumb-item"><a href="#!">Sample Page</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <!-- Page-header end -->
-                   
-                </div>
-                <div id="styleSelector">
-                
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+ 
 
 
 <!-- Warning Section Starts -->
