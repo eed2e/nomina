@@ -10,7 +10,6 @@ if (!empty($_SESSION['active'])) {
   Ingrese su usuario y su clave
 </div>';
     }else {
-      require_once "conexion.php";
       $user = $_POST['usuario'];
       $clave = $_POST['clave'];
 
@@ -18,7 +17,7 @@ if (!empty($_SESSION['active'])) {
        
         $_SESSION['active'] = true;
 
-        header('location: index.html');
+        header('location: sistema/');
         
       } else {
         $alert = '<div class="alert alert-danger" role="alert">
