@@ -3,8 +3,7 @@ include_once "include/header.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    
     <center>
     <div class="content">
     <!-- Button to trigger modal -->
@@ -20,56 +19,62 @@ include_once "include/header.php";
             <!-- Modal Header -->
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">
-                    <span aria-hidden="true">×</span>
+                    <span aria-hidden="true">X</span>
                     <span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">Contact Form</h4>
+                </div>
+            <div>
+            <center>
+                <h4 class="modal-title" id="myModalLabel">Nuevo Empleado</h4>
+                    </center>
             </div>
-            
             <!-- Modal Body -->
             <div class="modal-body">
                 <p class="statusMsg"></p>
-                <form role="form">
-                    <center>
-                   <div style="width: 200px" > <!-- this div just for demo display -->
-                <label class="dropimage miniprofile" style=" border-radius: 50%; padding-bottom: 75%; heigth:2px; width:145px;">
-                    <input name="image" title="Drop image or click me" type="file" id="imagen">
-                </label>
-             </div>
-                        </center>
-                    <div class="form-floating mb-3" >
-                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput"></label>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail">Apellido Paterno</label>
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Enter your email"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail">Apellido Materno</label>
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Enter your email"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail">Fecha de Ingreso</label>
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Enter your email"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail">Sueldo Mensual</label>
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Enter your email"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail">Departamento</label>
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Enter your email"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputMessage">Frecuencia de Pago</label>
-                        <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputMessage">Message</label>
-                        <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
-                    </div>
-                </form>
+                 <form action="login.php" method="post" class="md-float-material form-material">
+                        <div class="text-center">
+                        </div>
+                        <div class="auth-box card">
+                            <div class="card-block">
+                                <center>
+                                    <div style="width: 200px" > <!-- this div just for demo display -->
+                                        <label class="dropimage miniprofile" style=" border-radius: 50%; padding-bottom: 75%; heigth:2px; width:145px;">
+                                        <input name="image" title="Drop image or click me" type="file" id="imagen">
+                                        </label>
+                                    </div>
+                                </center>
+
+                                <div class="form-group form-primary">
+                                    <input type="text" name="usuario" id="usuario" class="form-control" required="">
+                                    <span class="form-bar"></span>
+                                    <label class="float-label">nombre</label>
+                                </div>
+                                <div class="form-group form-primary">
+                                    <input type="password" name="clave" id="clave" class="form-control" required="">
+                                    <span class="form-bar"></span>
+                                    <label class="float-label">Contraseña</label>
+                                </div>
+                                <div class="row m-t-25 text-left">
+                                    <div class="col-12">
+
+                                    </div>
+                                </div>
+                                <div class="row m-t-30">
+                                    <div class="col-md-12">
+
+                                        <button type="submit" class="btn btn-primary btn-md btn-block text-center m-b-20">iniciar</button>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="row">
+
+                                    <div class="col-md-2">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
             </div>
             
             <!-- Modal Footer -->
