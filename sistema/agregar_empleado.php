@@ -3,7 +3,11 @@ include_once "include/header.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    
+    <script>
+$(function () {
+$("#fecha").datepicker();
+});
+</script>
     <br>
     <div class="content">
     <!-- Button to trigger modal -->
@@ -47,7 +51,25 @@ include_once "include/header.php";
                                 <div class="form-group form-primary">
                                     <input type="text" name="usuario" id="usuario" class="form-control" required="">
                                     <span class="form-bar"></span>
-                                    <label class="float-label">nombre</label>
+                                    <label class="float-label">nombre(s)</label>
+                                </div>
+                                <div class="form-group form-primary">
+                                    <input type="text" name="usuario" id="usuario" class="form-control" required="">
+                                    <span class="form-bar"></span>
+                                    <label class="float-label">apellido Paterno</label>
+                                </div>
+                                <div class="form-group form-primary">
+                                    <input type="text" name="usuario" id="usuario" class="form-control" required="">
+                                    <span class="form-bar"></span>
+                                    <label class="float-label">apellido Materno</label>
+                                </div>                                
+                                <div class="form-group form-primary">
+                                    <input type="text" name="usuario" id="usuario" class="form-control" required="">
+                                    <span class="form-bar"></span>
+                                    <label class="float-label">Sueldo Mensual</label>
+                                    <label for="fecha">Fecha:
+                                    <input type="text" id="fecha" value="" />
+                                    </label>
                                 </div>
                                 <div class="form-group form-primary">
                                     <input type="password" name="clave" id="clave" class="form-control" required="">
@@ -97,6 +119,29 @@ include_once "include/header.php";
     }
   });
 });
-    </script>    
+    </script>   
+    <script>
+ $.datepicker.regional['es'] = {
+ closeText: 'Cerrar',
+ prevText: '< Ant',
+ nextText: 'Sig >',
+ currentText: 'Hoy',
+ monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+ monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+ dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+ dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+ dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+ weekHeader: 'Sm',
+ dateFormat: 'dd/mm/yy',
+ firstDay: 1,
+ isRTL: false,
+ showMonthAfterYear: false,
+ yearSuffix: ''
+ };
+ $.datepicker.setDefaults($.datepicker.regional['es']);
+$(function () {
+$("#fecha").datepicker();
+});
+</script>
     </html>
 
