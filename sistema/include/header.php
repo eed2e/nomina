@@ -27,7 +27,6 @@ include "../conexion.php";
     <!-- Favicon icon -->
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <!-- Google font-->     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
     <!-- Required Fremwork -->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap/css/bootstrap.min.css">
     <!-- waves.css -->
@@ -462,9 +461,7 @@ include "../conexion.php";
                     </div>
                 </nav>
                 <div class="pcoded-content">
-
-                    <!-- Page-header end -->
- 
+                   
 
 
 <!-- Warning Section Starts -->
