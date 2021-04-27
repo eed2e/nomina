@@ -3,9 +3,12 @@ include_once "include/header.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+<script>
 $(function () {
-$("#fecha").datepicker();
+$("#datepicker").datepicker();
 });
 </script>
     <br>
@@ -64,11 +67,8 @@ $("#fecha").datepicker();
                                     <label class="float-label">apellido Materno</label>
                                 </div>                                
                                 <div class="form-group form-primary">
-                                    <input type="text" name="usuario" id="usuario" class="form-control" required="">
-                                    <span class="form-bar"></span>
-                                    <label class="float-label">Sueldo Mensual</label>
-                                    <label for="fecha">Fecha:
-                                    <input type="text" id="fecha" value="" />
+                                    <label for="fecha" >Fecha:
+                                    <input type="text" id="fecha" value=" "/>
                                     </label>
                                 </div>
                                 <div class="form-group form-primary">
