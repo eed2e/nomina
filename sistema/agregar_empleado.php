@@ -4,14 +4,14 @@ include_once "include/header.php";
 <!DOCTYPE html>
 <html lang="en">
     
-    <center>
+    <br>
     <div class="content">
     <!-- Button to trigger modal -->
-<button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">
+<button class="btn waves-effect waves-light btn-grd-info " data-toggle="modal" data-target="#modalForm" style="border-radius:15px;">
     Open Contact Form
 </button>
         </div>
-</center>
+
 <!-- Modal -->
 <div class="modal fade" id="modalForm" role="dialog">
     <div class="modal-dialog">
