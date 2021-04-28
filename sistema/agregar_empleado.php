@@ -3,23 +3,25 @@ include_once "include/header.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-<script>
-$(function () {
-$("#datepicker").datepicker();
-});
-</script>
-    <br>
-    <div class="content">
-    <!-- Button to trigger modal -->
-<button class="btn waves-effect waves-light btn-grd-info btn-round" data-toggle="modal" data-target="#modalForm" >
-    Open Contact Form
-</button>
-        </div>
+<head>
+    
+    </head>
 
+
+
+    <div class="content"> 
+        <div class="page-header">
+            <div class="page-block">
+    <!-- Button to trigger modal -->
+                <button class="btn waves-effect waves-light btn-grd-info btn-round" data-toggle="modal" data-target="#modalForm">
+                Nuevo
+                </button>  
+            </div>
+        </div>
+    </div>
+        
 <!-- Modal -->
+    
 <div class="modal fade" id="modalForm" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -68,7 +70,7 @@ $("#datepicker").datepicker();
                                 </div>                                
                                 <div class="form-group form-primary">
                                     <label for="fecha" >Fecha:
-                                    <input type="text" id="fecha" value=" "/>
+                                        <div id="datepicker"></div>
                                     </label>
                                 </div>
                                 <div class="form-group form-primary">
@@ -107,6 +109,7 @@ $("#datepicker").datepicker();
         </div>
     </div>
 </div>
+    <!-- Carga de Imagen -->
     <script>
     document.addEventListener("DOMContentLoaded", function() {
   [].forEach.call(document.querySelectorAll('.dropimage'), function(img){
@@ -119,7 +122,8 @@ $("#datepicker").datepicker();
     }
   });
 });
-    </script>   
+    </script> 
+    <!-- Traducir calendario -->
     <script>
  $.datepicker.regional['es'] = {
  closeText: 'Cerrar',
@@ -143,5 +147,6 @@ $(function () {
 $("#fecha").datepicker();
 });
 </script>
+
     </html>
 
