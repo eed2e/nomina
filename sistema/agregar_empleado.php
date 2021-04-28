@@ -31,6 +31,7 @@ include_once "include/header.php";
 								<th>Salario diario</th>
 								<th>Departamento</th>
 								<th>estatus</th>
+								<th>acciones</th>
 	
 							
 							</tr>
@@ -51,7 +52,11 @@ include_once "include/header.php";
 										<td><?php echo $data['salario_mensual']; ?></td>
 										<td><?php echo $data['salario_diario']; ?></td>
 										<td><?php echo $data['departamento']; ?></td>
-										<td><?php echo $data['status']; ?></td>
+										<td><?php   if($data['status']==1){
+                                            echo "activo";
+                                        }else{
+                                            echo "inactivo";
+                                        } ?></td>
 										
 										
 									</tr>
