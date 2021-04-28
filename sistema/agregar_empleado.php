@@ -1,12 +1,24 @@
 <?php
 include_once "include/header.php";
 ?>
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
     
     </head>
-
+    <div class="page-header">
+                        <div class="page-block">
+                        <h1 class= "text-center">DEPARTAMENTOS</h1>
+                            <div class="row align-items-center form-group row">
+                                
+                                <div class="col-sm-6">
+                                <form action="" method="post" autocomplete="off">
+                                <button class="btn waves-effect waves-light btn-grd-info btn-round" data-toggle="modal" data-target="#modalForm">Nuevo</button>
+                                    <input type="text" placeholder="Ingrese Nombre" name="departamento" id="departamento" class="form-control " style = "border-radius: 15px;">
+                                            
+                                </div>
+                                <div class="col-sm-1">
+                                </div>
+                            
 
 
     <div class="content"> 
@@ -148,5 +160,5 @@ $("#fecha").datepicker();
 });
 </script>
 
-    </html>
+    
 
