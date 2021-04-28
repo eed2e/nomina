@@ -19,41 +19,62 @@ if (!empty($_POST)) {
  <!-- Page-header start -->
  <div class="page-header">
                         <div class="page-block">
-                            <div class="row align-items-center">
+                        <h1 class= "text-center">DEPARTAMENTOS</h1>
+                            <div class="row align-items-center form-group row">
+                                
+                                <div class="col-sm-6">
+                                <form action="" method="post" autocomplete="off">
+                                    <label for="nombre">Nombre del  Departamento</label><br>
+                                    <input type="text" placeholder="Ingrese Nombre" name="departamento" id="departamento" class="form-control " style = "border-radius: 15px;">
+                                            
+                                </div>
+                                <div class="col-sm-1">
+                                <label for="nombre">.</label><br>
+                                    <input type="submit" value="Guardar " class="btn waves-effect waves-light btn-grd-success btn-round form-control ">
+                                </div>
+                            
+                               
                                 <div class="col-md-8">
+                                    
                                     <div class="page-header-title">
-                                        <h5 class="m-b-10">DEPARTAMENTOS</h5>
-                                       
-                                        <div class="col-md-8">
-                                        <div class="col-md-8">
-                                        <br>
-                                       
-                                                    <form action="" method="post" autocomplete="off">
-                                                        <?php echo isset($alert) ? $alert : ''; ?>
                                         
-                                                        <div class="">
-                                                        <label for="nombre">Nombre del  Departamento</label>
-                                                        <input type="text" placeholder="Ingrese Nombre" name="departamento" id="departamento" class="form-control">
+                                    <form action="" method="post" autocomplete="off">
+                                        <div class="col-md-8">
+                                            <br>
+                                        <div class="col-md-20">
+                                        
+                                        <br>
+                                        </form>
+                                                    
+                                                 
+                                        
+                                                        <div class="form-group row">
+                                                  
+                                                       
+                                                        
                                                 </div>
                                                 <div class="col-md-4">
-                                                <br>
+                                                
                     
-                                                <input type="submit" value="Guardar " class="btn btn-primary">
-                                                    </form>
-                                        <br>
-                                        <br>
-                                        <br>
-
+                                                
+                                                    
+                                        
+                                       
                                           
                                 </div>
                                 </div>
                                 </div>
                                 </div>
-                                <br>
-                                <br>
+                                
 
 
-    <table class="table table-striped table-bordered" id="table">
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                    <table class="table  table-striped table-bordered " id="table" >
 						<thead class="thead-dark">
 							<tr>
 								<th>ID</th>
@@ -81,10 +102,6 @@ if (!empty($_POST)) {
 						</tbody>
 
 					</table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <!-- Page-header end -->
                    
                 </div>
@@ -98,10 +115,7 @@ if (!empty($_POST)) {
 <div class="content">
 
     <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">DEPARTAMENTOS</h1>
 
-    </div>
 
     <!-- Content Row -->
     
