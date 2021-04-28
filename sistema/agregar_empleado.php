@@ -3,7 +3,9 @@ include_once "include/header.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
+    
+    </head>
 
 
 
@@ -19,6 +21,7 @@ include_once "include/header.php";
     </div>
         
 <!-- Modal -->
+    
 <div class="modal fade" id="modalForm" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
