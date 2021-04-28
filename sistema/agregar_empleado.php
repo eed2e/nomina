@@ -14,7 +14,7 @@ $("#datepicker").datepicker();
     <br>
     <div class="content">
     <!-- Button to trigger modal -->
-<button class="btn waves-effect waves-light btn-grd-info " data-toggle="modal" data-target="#modalForm" style="border-radius:15px;">
+<button class="btn waves-effect waves-light btn-grd-info btn-round" data-toggle="modal" data-target="#modalForm" >
     Open Contact Form
 </button>
         </div>
