@@ -24,24 +24,34 @@ if (!empty($_POST)) {
                                     <div class="page-header-title">
                                         <h5 class="m-b-10">DEPARTAMENTOS</h5>
                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                <div class="row">
-                                <div class="col-lg-6 m-auto">
-                                    <form action="" method="post" autocomplete="off">
-                                        <?php echo isset($alert) ? $alert : ''; ?>
-                                    
-                                    <div class="form-group">
-                                        <label for="nombre">Nombre del  Departamento</label>
-                                        <input type="text" placeholder="Ingrese Nombre" name="departamento" id="departamento" class="form-control">
-                                    </div>
+                                        <div class="col-md-8">
+                                        <div class="col-md-8">
+                                        <br>
+                                       
+                                                    <form action="" method="post" autocomplete="off">
+                                                        <?php echo isset($alert) ? $alert : ''; ?>
+                                        
+                                                        <div class="">
+                                                        <label for="nombre">Nombre del  Departamento</label>
+                                                        <input type="text" placeholder="Ingrese Nombre" name="departamento" id="departamento" class="form-control">
+                                                </div>
+                                                <div class="col-md-4">
+                                                <br>
                     
-                                     <input type="submit" value="Guardar Departamento" class="btn btn-primary">
-                                    </form>
+                                                <input type="submit" value="Guardar " class="btn btn-primary">
+                                                    </form>
+                                        <br>
+                                        <br>
+                                        <br>
+
+                                          
                                 </div>
-                            </div>
-    
+                                </div>
+                                </div>
+                                </div>
+                                <br>
+                                <br>
+
 
     <table class="table table-striped table-bordered" id="table">
 						<thead class="thead-dark">
