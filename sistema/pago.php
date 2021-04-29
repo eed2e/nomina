@@ -6,7 +6,7 @@
 				<h5>Productos</h5>
 				
 				<a href="registro_producto.php" class="btn btn-warning">Nuevo</a>
-				
+				<!--inicio de la tabla responsiba-->
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered" id="table">
 						<thead class="thead-dark">
@@ -24,8 +24,8 @@
 						<tbody>
 							<?php
 							include "../conexion.php";
-
-							$query = mysqli_query($conexion, "SELECT * FROM producto");
+                            //query para muestreo de tabla pagos 
+							$query = mysqli_query($conexion, "SELECT * FROM pago_total");
 							$result = mysqli_num_rows($query);
 							if ($result > 0) {
 								while ($data = mysqli_fetch_assoc($query)) { ?>
