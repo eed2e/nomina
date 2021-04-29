@@ -419,6 +419,7 @@ include "../conexion.php";
                         <div class="content"> 
         <div class="page-header">
             <div class="page-block">
+                <h1 class= "text-center">Empleados</h1>
     <!-- Button to trigger modal -->
                 <button class="btn waves-effect waves-light btn-grd-info btn-round" data-toggle="modal" data-target="#modalForm">
                 Nuevo
@@ -553,7 +554,7 @@ include "../conexion.php";
                                                                         <div>
                                                                             <p>Frecuencia de pago</p>
                                                                                 <select class="form-select" aria-label="Default select example" style=" border-radius:10px;">
-                                                                                    <option selected>SSeleccionar</option>
+                                                                                    <option selected>Seleccionar</option>
                                                                                     <option value="7">Semanal</option>
                                                                                     <option value="14">Catorcenal</option>
                                                                                     
@@ -573,8 +574,8 @@ include "../conexion.php";
                                                     
                                                     <!-- Modal Footer -->
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">SUBMIT</button>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                                        <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">Registrar</button>
                                                     </div>
                                                 </div>
                                             </div>
