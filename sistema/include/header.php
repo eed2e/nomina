@@ -202,7 +202,7 @@ include "../conexion.php";
                             <ul class="show-notification profile-notification">
                                 
                                 <li class="waves-effect waves-light">
-                                    <a href="salir.php">
+                                    <a href="auth-normal-sign-in.html">
                                         <i class="ti-layout-sidebar-left"></i> cerrar sesion
                                     </a>
                                 </li>
@@ -230,7 +230,7 @@ include "../conexion.php";
                                 <ul>
                                     <li class="more-details">
                              
-                                        <a href="salir.php"><i class="ti-layout-sidebar-left"></i>cerrar sesion</a>
+                                        <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>cerrar sesion</a>
                                     </li>
                                 </ul>
                             </div>

@@ -19,53 +19,6 @@ include_once "include/header.php";
                 </button>  
             </div>
         </div>
-        <div class="card-block table-border-style">
-                    <table class="table  table-striped table-bordered " id="table" >
-						<thead class="thead-dark">
-							<tr>
-								<th>ID</th>
-								<th>foto</th>
-								<th>Nombre</th>
-								<th>fecha ingreso</th>
-								<th>Salario Mensual</th>
-								<th>Salario diario</th>
-								<th>Departamento</th>
-								<th>estatus</th>
-								<th>acciones</th>
-	
-							
-							</tr>
-						</thead>
-						<tbody>
-							<?php
-							include "../conexion.php";
-
-							$query = mysqli_query($conexion, "SELECT * FROM empleados");
-							$result = mysqli_num_rows($query);
-							if ($result > 0) {
-								while ($data = mysqli_fetch_assoc($query)) { ?>
-									<tr>
-										<td><?php echo $data['id_empleado']; ?></td>
-										<td><?php echo $data['foto']; ?></td>
-										<td><?php echo $data['nombre']; ?>  <?php echo $data['apellido_paterno']; ?>  <?php echo $data['apellido_materno']; ?></td>
-										<td><?php echo $data['fecha_ingreso']; ?></td>
-										<td><?php echo $data['salario_mensual']; ?></td>
-										<td><?php echo $data['salario_diario']; ?></td>
-										<td><?php echo $data['departamento']; ?></td>
-										<td><?php   if($data['status']==1){
-                                            echo "activo";
-                                        }else{
-                                            echo "inactivo";
-                                        } ?></td>
-										
-										
-									</tr>
-							<?php }
-							} ?>
-						</tbody>
-
-					</table>
-                    <!-- Page-header end -->
     </div>
         
 <!-- Modal -->
