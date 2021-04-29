@@ -332,7 +332,7 @@ include "../conexion.php";
                         <ul class="pcoded-item pcoded-left-item">
                             <li>
                                 <a href="agregar_empleado.php" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                    <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>
                                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">Lista de empleados</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
@@ -359,7 +359,16 @@ include "../conexion.php";
                             <li>
                                 <a href="chart.html" class="waves-effect waves-dark">
                                     <span class="pcoded-micon"><i class="ti-layers"></i><b>M</b></span>
-                                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">nominas</span>
+                                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">deducciones</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                                <a href="chart.html" class="waves-effect waves-dark">
+                                    <span class="pcoded-micon"><i class="ti-layers"></i><b>M</b></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">persepciones</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a> <a href="chart.html" class="waves-effect waves-dark">
+                                    <span class="pcoded-micon"><i class="ti-layers"></i><b>M</b></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">pago</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                                 <!--<ul class="pcoded-submenu">
