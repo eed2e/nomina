@@ -1,4 +1,56 @@
-﻿html {
+﻿    .two-1500>* {
+        width: 50%
+        width: 14.28571%
+    }
+    .eight-1500>* {
+        width: 12.5%
+    }
+    .nine-1500>* {
+        width: 11.11111%
+    }
+    .ten-1500>* {
+        width: 10%
+    }
+    .eleven-1500>* {
+        width: 9.09091%
+    }
+    .twelve-1500>* {
+        width: 8.33333%
+    }
+}
+
+@media all and (min-width: 1600px) {
+    .one-1600>* {
+        width: 100%
+    }
+    .two-1600>* {
+        width: 50%
+    }
+    .three-1600>* {
+        width: 33.33333%
+    .four-1800>* {
+        width: 25%
+    }
+    .five-1800>* {
+        width: 20%
+    }
+    .six-1800>* {
+        width: 16.66666%
+    }
+    .seven-1800>* {
+        width: 14.28571%
+    }
+    .eight-1800>* {
+        width: 12.5%
+    }
+    .nine-1800>* {
+        width: 11.11111%
+    }
+    .ten-1800>* {
+        width: 10%
+    }
+    .eleven-1800>* {
+html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
@@ -1104,8 +1156,6 @@ tr:nth-child(even) {
     .one-1500>* {
         width: 100%
     }
-    .two-1500>* {
-        width: 50%
     }
     .three-1500>* {
         width: 33.33333%
@@ -1120,34 +1170,6 @@ tr:nth-child(even) {
         width: 16.66666%
     }
     .seven-1500>* {
-        width: 14.28571%
-    }
-    .eight-1500>* {
-        width: 12.5%
-    }
-    .nine-1500>* {
-        width: 11.11111%
-    }
-    .ten-1500>* {
-        width: 10%
-    }
-    .eleven-1500>* {
-        width: 9.09091%
-    }
-    .twelve-1500>* {
-        width: 8.33333%
-    }
-}
-
-@media all and (min-width: 1600px) {
-    .one-1600>* {
-        width: 100%
-    }
-    .two-1600>* {
-        width: 50%
-    }
-    .three-1600>* {
-        width: 33.33333%
     }
     .four-1600>* {
         width: 25%
@@ -1227,28 +1249,6 @@ tr:nth-child(even) {
     .three-1800>* {
         width: 33.33333%
     }
-    .four-1800>* {
-        width: 25%
-    }
-    .five-1800>* {
-        width: 20%
-    }
-    .six-1800>* {
-        width: 16.66666%
-    }
-    .seven-1800>* {
-        width: 14.28571%
-    }
-    .eight-1800>* {
-        width: 12.5%
-    }
-    .nine-1800>* {
-        width: 11.11111%
-    }
-    .ten-1800>* {
-        width: 10%
-    }
-    .eleven-1800>* {
         width: 9.09091%
     }
     .twelve-1800>* {
