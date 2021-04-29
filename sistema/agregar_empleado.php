@@ -531,7 +531,11 @@ include "../conexion.php";
                                                                             <span class="form-bar"></span>
                                                                             <label class="float-label">Sueldo Mensual</label>
                                                                         </div>
-                                                                        
+                                                                        <div>
+                                                                            <p>Salario diario</p>
+                                                                            <input class="form-control" type="text" placeholder="salario diario" aria-label="Disabled input example" disabled readonly>
+                                                                        </div>
+                                                                        <br>
                                                                         <div class="form-group form-primary">
                                                                             <label for="fecha" >
                                                                             Fecha de ingreso:<input type="date" name="fecha" style = "border-radius:10px;" >
@@ -556,9 +560,7 @@ include "../conexion.php";
                                                                                     
                                                                         </select>
                                                                         </div>
-                                                                        <div>
-                                                                            <input class="form-control" type="text" placeholder="salario diario" aria-label="Disabled input example" disabled readonly>
-                                                                        </div>
+                                                                        
                                                                         <div class="row">
 
                                                                             <div class="col-md-2">
