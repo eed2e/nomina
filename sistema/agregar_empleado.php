@@ -455,8 +455,8 @@ include "../conexion.php";
 										<td><?php echo $data['foto']; ?></td>
 										<td><?php echo $data['nombre']; ?>  <?php echo $data['apellido_paterno']; ?>  <?php echo $data['apellido_materno']; ?></td>
 										<td><?php echo $data['fecha_ingreso']; ?></td>
-										<td><?php echo $data['salario_mensual']; ?></td>
-										<td><?php echo $data['salario_diario']; ?></td>
+										<td><?php echo $data['sueldo_mensual']; ?></td>
+										<td><?php echo $data['sueldo_diario']; ?></td>
 										<td><?php echo $data['departamento']; ?></td>
 										<td><?php   if($data['status']==1){
                                             echo "activo";
