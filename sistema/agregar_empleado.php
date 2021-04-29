@@ -41,8 +41,9 @@ include "../conexion.php";
     <!-- Required Fremwork -->
     <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <script src="js/bootstrap-datetimepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/picnic.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap/css/bootstrap.min.css">
+    
     
     
 
@@ -484,12 +485,10 @@ include "../conexion.php";
                                                             <span aria-hidden="true">X</span>
                                                             <span class="sr-only">Close</span>
                                                         </button>
+                                                        <br>
+                                                        <h4 class="modal-title text-center" id="myModalLabel">Nuevo Empleado</h4>
+                                                            
                                                         </div>
-                                                    <div>
-                                                    <center>
-                                                        <h4 class="modal-title" id="myModalLabel">Nuevo Empleado</h4>
-                                                            </center>
-                                                    </div>
                                                     <!-- Modal Body -->
                                                     <div class="modal-body">
                                                         <p class="statusMsg"></p>
@@ -746,5 +745,3 @@ $("#fecha").datepicker();
 </body>
 
 </html>
-    
-
