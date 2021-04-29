@@ -599,8 +599,8 @@ th {
 th {
     text-align: left;
     font-weight: 900;
-    color: #fff;
-    background-color: #0074d9
+    color: #000000b0;
+    background-color: hsla(202, 82%, 74%, 0.192)
 }
 
 .success th {
@@ -2850,138 +2850,6 @@ tr:nth-child(even) {
     }
 }
 
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3em;
-    padding: 0 .6em;
-    background: #fff;
-    box-shadow: 0 0 0.2em rgba(170, 170, 170, 0.2);
-    z-index: 10000;
-    transition: all .3s;
-    transform-style: preserve-3d
-}
-
-nav .brand,
-nav .menu,
-nav .burger {
-    float: right;
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%)
-}
-
-nav .brand {
-    font-weight: 700;
-    float: left;
-    padding: 0 .6em;
-    max-width: 50%;
-    white-space: nowrap;
-    color: inherit
-}
-
-nav .brand * {
-    vertical-align: middle
-}
-
-nav .logo {
-    height: 2em;
-    margin-right: .3em
-}
-
-nav .select::after {
-    height: calc(100% - 1px);
-    padding: 0;
-    line-height: 2.4em
-}
-
-nav .menu>* {
-    margin-right: .6em
-}
-
-nav .burger {
-    display: none
-}
-
-@media all and (max-width: 60em) {
-    nav .burger {
-        display: inline-block;
-        cursor: pointer;
-        bottom: -1000em;
-        margin: 0;
-        -webkit-tap-highlight-color: transparent
-    }
-    nav .burger~.menu,
-    nav .show:checked~.burger {
-        position: fixed;
-        min-height: 100%;
-        top: 0;
-        right: 0;
-        bottom: -1000em;
-        margin: 0;
-        background: #fff;
-        transition: all .5s ease;
-        transform: none
-    }
-    nav .burger~.menu {
-        z-index: 11
-    }
-    nav .show:checked~.burger {
-        color: transparent;
-        width: 100%;
-        border-radius: 0;
-        background: rgba(17, 17, 17, 0.2);
-        transition: all .5s ease
-    }
-    nav .show~.menu {
-        width: 70%;
-        max-width: 300px;
-        transform-origin: center right;
-        transition: all .25s ease;
-        transform: scaleX(0)
-    }
-    nav .show~.menu>* {
-        transform: translateX(100%);
-        transition: all 0s ease .5s
-    }
-    nav .show:checked~.menu>*:nth-child(1) {
-        transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s
-    }
-    nav .show:checked~.menu>*:nth-child(2) {
-        transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1) .1s
-    }
-    nav .show:checked~.menu>*:nth-child(3) {
-        transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1) .2s
-    }
-    nav .show:checked~.menu>*:nth-child(4) {
-        transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1) .3s
-    }
-    nav .show:checked~.menu>*:nth-child(5) {
-        transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1) .4s
-    }
-    nav .show:checked~.menu>*:nth-child(6) {
-        transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1) .5s
-    }
-    nav .show:checked~.menu {
-        transform: scaleX(1)
-    }
-    nav .show:checked~.menu>* {
-        transform: translateX(0);
-        transition: all .5s ease-in-out .6s
-    }
-    nav .burger~.menu>* {
-        display: block;
-        margin: .3em;
-        text-align: left;
-        max-width: calc(100% - .6em)
-    }
-    nav .burger~.menu>a {
-        padding: .3em .9em
-    }
-}
 
 .stack,
 .stack .toggle {
