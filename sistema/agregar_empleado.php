@@ -3,9 +3,12 @@ include_once "include/header.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/picnic">
+<head>
+<link rel="stylesheet" type="text/css" href="unclude/picnic.css">
     
+    </head>
+
+
 
     <div class="content"> 
         <div class="page-header">
@@ -91,12 +94,11 @@ include_once "include/header.php";
                                                                 <div class="auth-box card">
                                                                     <div class="card-block">
                                                                         <center>
-                                                                        <div style="width: 200px"> <!-- this div just for demo display -->
-                                                                            <label class="dropimage">
-                                                                                <input title="Drop image or click me" type="file">
-                                                                            </label>
-                                                                        </div>
-
+                                                                            <div style="width: 200px" > <!-- this div just for demo display -->
+                                                                                <label class="dropimage miniprofile" style=" border-radius: 50%; padding-bottom: 75%; heigth:2px; width:145px;">
+                                                                                <input name="image" title="Drop image or click me" type="file" id="imagen">
+                                                                                </label>
+                                                                            </div>
                                                                         </center>
 
                                                                         <div class="form-group form-primary">
