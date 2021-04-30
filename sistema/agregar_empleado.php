@@ -246,7 +246,7 @@ include "../conexion.php";
                         <div class="pcoded-navigation-label" data-i18n="nav.category.navigation"></div>
                         <ul class="pcoded-item pcoded-left-item">
                             <li class="">
-                                <a href="index.html" class="waves-effect waves-dark">
+                                <a href="index.php" class="waves-effect waves-dark">
                                     <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                     <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                     <span class="pcoded-mcaret"></span>
@@ -362,16 +362,16 @@ include "../conexion.php";
                         <div class="pcoded-navigation-label" data-i18n="nav.category.other">Nominas</div>
                         <ul class="pcoded-item pcoded-left-item">
                             <li>
-                                <a href="chart.html" class="waves-effect waves-dark">
+                                <a href="deducciones.php" class="waves-effect waves-dark">
                                     <span class="pcoded-micon"><i class="ti-layers"></i><b>M</b></span>
                                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">deducciones</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
-                                <a href="chart.html" class="waves-effect waves-dark">
+                                <a href="persepciones.php" class="waves-effect waves-dark">
                                     <span class="pcoded-micon"><i class="ti-layers"></i><b>M</b></span>
                                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">persepciones</span>
                                     <span class="pcoded-mcaret"></span>
-                                </a> <a href="chart.html" class="waves-effect waves-dark">
+                                </a> <a href="pago.php" class="waves-effect waves-dark">
                                     <span class="pcoded-micon"><i class="ti-layers"></i><b>M</b></span>
                                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">pago</span>
                                     <span class="pcoded-mcaret"></span>
@@ -463,7 +463,8 @@ include "../conexion.php";
                                         }else{
                                             echo "inactivo";
                                         } ?></td>
-										
+										<td><a href="baja_empleado.php?id=<?php echo $data['id_empleado']; ?>" class="btn btn-danger">Baja </a>
+										<a href="editar_empleado.php?id=<?php echo $data['id_empleado']; ?>" class="btn btn-success">editar </a></td>
 										
 									</tr>
 							<?php }
@@ -524,9 +525,9 @@ include "../conexion.php";
                                                                             <label class="float-label">Apellido Materno</label>
                                                                         </div>                                                       
                                                                         <div class="form-group form-primary">
-                                                                            <input type="text" name="sm" id="sm" class="form-control" required>
+                                                                            <input onblur = 'autorrelleno();' type="text" name="sm" id="sm" class="form-control" required>
                                                                             <span class="form-bar"></span>
-                                                                            <label class="float-label">Sueldo Mensual</label>
+                                                                            <label class="float-label" >Sueldo Mensual</label>
                                                                         </div>
                                                                         <div>
                                                                             <p>Salario diario</p>
@@ -641,6 +642,19 @@ include "../conexion.php";
     <!-- Warning Section Ends -->
     <!-- Modal -->
  <!-- Carga de Imagen -->
+ <script type="text/javascript">
+
+        // funcion que se ejecuta cada vez que se selecciona una opción
+
+        function autorrelleno()
+
+        {
+            
+            document.getElementById('sd').value=(document.getElementById('sm').value)/30.4;
+
+        }
+
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             [].forEach.call(document.querySelectorAll('.dropimage'), function(img) {
