@@ -419,6 +419,7 @@ include "../conexion.php";
                         <div class="content"> 
         <div class="page-header">
             <div class="page-block">
+                <h1 class= "text-center">EMPLEADOS</h1>
     <!-- Button to trigger modal -->
                 <button class="btn waves-effect waves-light btn-grd-info btn-round" data-toggle="modal" data-target="#modalForm">
                 Nuevo
