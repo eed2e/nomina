@@ -492,9 +492,7 @@ include "../conexion.php";
                                                     <!-- Modal Body -->
                                                     <div class="modal-body">
                                                         <p class="statusMsg"></p>
-                                                        <form action="login.php" method="post" class="md-float-material form-material">
-                                                                <div class="text-center">
-                                                                </div>
+                                                        <form action="add_empleado.php" method="POST" class="md-float-material form-material">
                                                                 <div class="auth-box card">
                                                                     <div class="card-block">
                                                                         <center>
@@ -506,54 +504,62 @@ include "../conexion.php";
                                                                         </center>
 
                                                                         <div class="form-group form-primary">
-                                                                            <input type="text" name="usuario" id="usuario" class="form-control" required="">
+                                                                            <input type="text" name="id" id="id" class="form-control" required>
                                                                             <span class="form-bar"></span>
                                                                             <label class="float-label">ID</label>
                                                                         </div>
                                                                         <div class="form-group form-primary">
-                                                                            <input type="text" name="usuario" id="usuario" class="form-control" required="">
+                                                                            <input type="text" name="nombre" id="nombre" class="form-control" required>
                                                                             <span class="form-bar"></span>
                                                                             <label class="float-label">Nombre(s)</label>
                                                                         </div>
                                                                         <div class="form-group form-primary">
-                                                                            <input type="text" name="usuario" id="usuario" class="form-control" required="">
+                                                                            <input type="text" name="ap" id="ap" class="form-control" required>
                                                                             <span class="form-bar"></span>
                                                                             <label class="float-label">Apellido Paterno</label>
                                                                         </div>
                                                                         <div class="form-group form-primary">
-                                                                            <input type="text" name="usuario" id="usuario" class="form-control" required="">
+                                                                            <input type="text" name="am" id="am" class="form-control" required>
                                                                             <span class="form-bar"></span>
                                                                             <label class="float-label">Apellido Materno</label>
                                                                         </div>                                                       
                                                                         <div class="form-group form-primary">
-                                                                            <input type="text" name="clave" id="clave" class="form-control" required="">
+                                                                            <input type="text" name="sm" id="sm" class="form-control" required>
                                                                             <span class="form-bar"></span>
                                                                             <label class="float-label">Sueldo Mensual</label>
                                                                         </div>
                                                                         <div>
                                                                             <p>Salario diario</p>
-                                                                            <input class="form-control" type="text" placeholder="salario diario" aria-label="Disabled input example" disabled readonly>
+                                                                            <input class="form-control" id="sd" name="sd" type="text" placeholder="salario diario" aria-label="Disabled input example" disabled readonly>
                                                                         </div>
                                                                         <br>
                                                                         <div class="form-group form-primary">
                                                                             <label for="fecha" >
-                                                                            Fecha de ingreso:<input type="date" name="fecha" style = "border-radius:10px;" >
+                                                                            Fecha de ingreso:<input type="date" name="fecha" id= "fecha" style = "border-radius:10px;" required >
                                                                             </label>
                                                                         </div>
                                                                         <div>
                                                                             <p>Departamento</p>
-                                                                                <select class="form-select" aria-label="Default select example" style=" border-radius:10px;">
-                                                                                    <option selected>Seleccionar</option>
-                                                                                    <option value="1">One</option>
-                                                                                    <option value="2">Two</option>
-                                                                                    <option value="3">Three</option>
-                                                                        </select>
+                                                                                <select class="form-select" aria-label="Default select example" id="dep" name="dep" style=" border-radius:10px;" required>
+                                                                                   
+                                                                                    <?php
+                                                                                        include "../conexion.php";
+                                                                                        $query = mysqli_query($conexion, "SELECT * FROM departamentos");
+                                                                                        $result = mysqli_num_rows($query);  
+                                                                                        if ($result > 0) {
+                                                                                            while ($data = mysqli_fetch_assoc($query)) { ?>
+                                                                                                <option><?php echo $data['nombre']; ?></option>
+                                                                                            <?php } 
+                                                                                        }
+                                                                                    ?>
+                                                                                    
+                                                                                </select>
                                                                         </div>
                                                                         <br>
                                                                         <div>
                                                                             <p>Frecuencia de pago</p>
-                                                                                <select class="form-select" aria-label="Default select example" style=" border-radius:10px;">
-                                                                                    <option selected>SSeleccionar</option>
+                                                                                <select class="form-select" id="fp" name="fp" aria-label="Default select example" style=" border-radius:10px;" required>
+                                                                                    <option selected>Seleccionar</option>
                                                                                     <option value="7">Semanal</option>
                                                                                     <option value="14">Catorcenal</option>
                                                                                     
@@ -568,15 +574,16 @@ include "../conexion.php";
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </form>
+                                                            
                                                     </div>
                                                     
                                                     <!-- Modal Footer -->
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">SUBMIT</button>
+                                                        <button type="submit" class="btn btn-primary submitBtn" >Guardar</button>
                                                     </div>
                                                 </div>
+                                                </form>
                                             </div>
 
                                     <!-- Page-body end -->
@@ -737,9 +744,7 @@ include "../conexion.php";
  yearSuffix: ''
  };
  $.datepicker.setDefaults($.datepicker.regional['es']);
-$(function () {
-$("#fecha").datepicker();
-});
+
 </script>
 
 </body>
