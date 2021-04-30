@@ -15,8 +15,8 @@ if (empty($_POST['id'] ) || empty($_POST['nombre'] )|| empty($_POST['ap'] )|| em
 
    
     
-	    $sql = mysqli_query($conexion, "INSERT INTO empleados (id_empleado, nombre, apellido_paterno, apellido_materno, fecha_ingreso, sueldo_mensual, departamento, frecuencia_pago, status) 
-        VALUES ('$id','$nombre','$ap','$am','$fecha','$sm','$dep','$fp','$status')");
+	    $sql = mysqli_query($conexion, "INSERT INTO empleados (id_empleado, nombre, apellido_paterno, apellido_materno, fecha_ingreso, sueldo_mensual, sueldo,diario, departamento, frecuencia_pago, status) 
+        VALUES ('$id','$nombre','$ap','$am','$fecha','$sm','$sd','$dep','$fp','$status')");
 
         
             
