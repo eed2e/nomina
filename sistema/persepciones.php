@@ -79,70 +79,21 @@ if (!empty($_POST)) {
                                                         <form action="add_empleado.php" method="POST" class="md-float-material form-material">
                                                                 <div class="auth-box card">
                                                                     <div class="card-block">
-                                                                        <center>
-                                                                            <div style="width: 200px" > <!-- this div just for demo display -->
-                                                                                <label class="dropimage miniprofile" style=" border-radius: 50%; padding-bottom: 75%; heigth:2px; width:145px;">
-                                                                                <input name="image" title="Drop image or click me" type="file" id="imagen">
-                                                                                </label>
-                                                                            </div>
-                                                                        </center>
                                                                         <div class="form-group form-primary">
                                                                             <input type="text" name="nombre" id="nombre" class="form-control" required>
                                                                             <span class="form-bar"></span>
-                                                                            <label class="float-label">Nombre(s)</label>
+                                                                            <label class="float-label">Nombre</label>
                                                                         </div>
                                                                         <div class="form-group form-primary">
                                                                             <input type="text" name="ap" id="ap" class="form-control" required>
                                                                             <span class="form-bar"></span>
-                                                                            <label class="float-label">Apellido Paterno</label>
+                                                                            <label class="float-label">Descripcion</label>
                                                                         </div>
                                                                         <div class="form-group form-primary">
                                                                             <input type="text" name="am" id="am" class="form-control" required>
                                                                             <span class="form-bar"></span>
-                                                                            <label class="float-label">Apellido Materno</label>
+                                                                            <label class="float-label">Monto</label>
                                                                         </div>                                                       
-                                                                        <div class="form-group form-primary">
-                                                                            <input type="text" name="sm" id="sm" class="form-control" required>
-                                                                            <span class="form-bar"></span>
-                                                                            <label class="float-label">Sueldo Mensual</label>
-                                                                        </div>
-                                                                        <div>
-                                                                            <p>Salario diario</p>
-                                                                            <input class="form-control" id="sd" name="sd" type="text" placeholder="salario diario" aria-label="Disabled input example" disabled readonly>
-                                                                        </div>
-                                                                        <br>
-                                                                        <div class="form-group form-primary">
-                                                                            <label for="fecha" >
-                                                                            Fecha de ingreso:<input type="date" name="fecha" id= "fecha" style = "border-radius:10px;" required >
-                                                                            </label>
-                                                                        </div>
-                                                                        <div>
-                                                                            <p>Departamento</p>
-                                                                                <select class="form-select" aria-label="Default select example" id="dep" name="dep" style=" border-radius:10px;" required>
-                                                                                   
-                                                                                    <?php
-                                                                                        include "../conexion.php";
-                                                                                        $query = mysqli_query($conexion, "SELECT * FROM departamentos");
-                                                                                        $result = mysqli_num_rows($query);  
-                                                                                        if ($result > 0) {
-                                                                                            while ($data = mysqli_fetch_assoc($query)) { ?>
-                                                                                                <option><?php echo $data['nombre']; ?></option>
-                                                                                            <?php } 
-                                                                                        }
-                                                                                    ?>
-                                                                                    
-                                                                                </select>
-                                                                        </div>
-                                                                        <br>
-                                                                        <div>
-                                                                            <p>Frecuencia de pago</p>
-                                                                                <select class="form-select" id="fp" name="fp" aria-label="Default select example" style=" border-radius:10px;" required>
-                                                                                    <option selected>Seleccionar</option>
-                                                                                    <option value="7">Semanal</option>
-                                                                                    <option value="14">Catorcenal</option>
-                                                                                    
-                                                                        </select>
-                                                                        </div>
                                                                         
                                                                         <div class="row">
 
@@ -150,8 +101,7 @@ if (!empty($_POST)) {
 
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                </div>
+                                                                   
                                                             
                                                     </div>
                                                     
@@ -166,11 +116,11 @@ if (!empty($_POST)) {
 
                                     <!-- Page-body end -->
                                 </div>
-                                <div id="styleSelector"> </div>
+                                
                             </div>
                         </div>
-                    </div>
-                </div>
+                    
+                
             </div>
 
     <!-- Warning Section Starts -->
@@ -219,112 +169,6 @@ if (!empty($_POST)) {
     <!-- Warning Section Ends -->
     <!-- Modal -->
  <!-- Carga de Imagen -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            [].forEach.call(document.querySelectorAll('.dropimage'), function(img) {
-                img.onchange = function(e) {
-                    var inputfile = this,
-                        reader = new FileReader();
-                    reader.onloadend = function() {
-                        inputfile.style['background-image'] = 'url(' + reader.result + ')';
-                    }
-                    reader.readAsDataURL(e.target.files[0]);
-                }
-            });
-        });
-    </script>
-    <!-- Traducir calendario -->
-    <script>
-        $.datepicker.regional['es'] = {
-            closeText: 'Cerrar',
-            prevText: '< Ant',
-            nextText: 'Sig >',
-            currentText: 'Hoy',
-            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
-            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
-            dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
-            weekHeader: 'Sm',
-            dateFormat: 'dd/mm/yy',
-            firstDay: 1,
-            isRTL: false,
-            showMonthAfterYear: false,
-            yearSuffix: ''
-        };
-        $.datepicker.setDefaults($.datepicker.regional['es']);
-        $(function() {
-            $("#fecha").datepicker();
-        });
-    </script>
-<!-- Required Jquery -->
-<script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery-ui/jquery-ui.min.js "></script>
-<script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="assets/pages/widget/excanvas.js "></script>
-<!-- waves js -->
-<script src="assets/pages/waves/js/waves.min.js"></script>
-<!-- jquery slimscroll js -->
-<script type="text/javascript" src="assets/js/jquery-slimscroll/jquery.slimscroll.js "></script>
-<!-- modernizr js -->
-<script type="text/javascript" src="assets/js/modernizr/modernizr.js "></script>
-<!-- slimscroll js -->
-<script type="text/javascript" src="assets/js/SmoothScroll.js"></script>
-<script src="assets/js/jquery.mCustomScrollbar.concat.min.js "></script>
-<!-- Chart js -->
-<script type="text/javascript" src="assets/js/chart.js/Chart.js"></script>
-<!-- amchart js -->
-<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-<script src="assets/pages/widget/amchart/gauge.js"></script>
-<script src="assets/pages/widget/amchart/serial.js"></script>
-<script src="assets/pages/widget/amchart/light.js"></script>
-<script src="assets/pages/widget/amchart/pie.min.js"></script>
-<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-<!-- menu js -->
-<script src="assets/js/pcoded.min.js"></script>
-<script src="assets/js/vertical-layout.min.js "></script>
-<!-- custom js -->
-<script type="text/javascript" src="assets/pages/dashboard/custom-dashboard.js"></script>
-<script type="text/javascript" src="assets/js/script.js "></script>
-                                         </div>
-    <!-- Carga de Imagen -->
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-  [].forEach.call(document.querySelectorAll('.dropimage'), function(img){
-    img.onchange = function(e){
-      var inputfile = this, reader = new FileReader();
-      reader.onloadend = function(){
-        inputfile.style['background-image'] = 'url('+reader.result+')';
-      }
-      reader.readAsDataURL(e.target.files[0]);
-    }
-  });
-});
-    </script> 
-    <!-- Traducir calendario -->
-    <script>
- $.datepicker.regional['es'] = {
- closeText: 'Cerrar',
- prevText: '< Ant',
- nextText: 'Sig >',
- currentText: 'Hoy',
- monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
- monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
- dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
- dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
- dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
- weekHeader: 'Sm',
- dateFormat: 'dd/mm/yy',
- firstDay: 1,
- isRTL: false,
- showMonthAfterYear: false,
- yearSuffix: ''
- };
- $.datepicker.setDefaults($.datepicker.regional['es']);
 
-</script>
 
-</body>
 
-</html>
