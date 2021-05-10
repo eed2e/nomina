@@ -26,7 +26,7 @@ if (!empty($_POST)) {
                                 <form action="" method="post" autocomplete="off">
                                     <label for="nombre">Nombre del  Departamento</label><br>
                                     <input type="text" placeholder="Ingrese Nombre" name="departamento" id="departamento" class="form-control " style = "border-radius: 15px;">
-                                            
+                                    </form>
                                 </div>
                                 <div class="col-sm-1">
                                 <label for="nombre">.</label><br>
@@ -38,13 +38,13 @@ if (!empty($_POST)) {
                                     
                                     <div class="page-header-title">
                                         
-                                    <form action="" method="post" autocomplete="off">
+                                    
                                         <div class="col-md-8">
                                             <br>
                                         <div class="col-md-20">
                                         
                                         <br>
-                                        </form>
+                                        
                                                     
                                                  
                                         
@@ -97,10 +97,11 @@ if (!empty($_POST)) {
                 <div id="styleSelector">
                 
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+        
+
+    
+
 <div class="content">
 
     <!-- Page Heading -->
