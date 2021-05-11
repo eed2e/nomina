@@ -453,7 +453,7 @@ include "../conexion.php";
                                             while ($data = mysqli_fetch_assoc($query)) { ?>
                                                 <tr>
                                                     <td><?php echo $data['id_empleado']; ?></td>
-                                                    <td><?php echo $data['foto']; ?></td>
+                                                    <td><img width="130px" height="110px" src =" <?php echo $data['foto'] ?> "></td>
                                                     <td><?php echo $data['nombre']; ?> <?php echo $data['apellido_paterno']; ?> <?php echo $data['apellido_materno']; ?></td>
                                                     <td><?php echo $data['fecha_ingreso']; ?></td>
                                                     <td><?php echo $data['sueldo_mensual']; ?></td>
@@ -499,7 +499,7 @@ include "../conexion.php";
                                         <!-- Modal Body -->
                                         <div class="modal-body">
                                             <p class="statusMsg"></p>
-                                            <form action="add_empleado.php" method="POST" class="md-float-material form-material">
+                                            <form action="add_empleado.php" method="POST" class="md-float-material form-material" enctype="multipart/form-data">
                                                 <div class="auth-box card">
                                                     <div class="card-block">
                                                         <center>
@@ -650,7 +650,7 @@ include "../conexion.php";
                                                                         </div>
                                                                         <div>
                                                                             <p>Salario diario</p>
-                                                                            <input class="form-control" id="sd" name="sd" type="text" placeholder="salario diario" aria-label="Disabled input example" disabled readonly>
+                                                                            <input class="form-control" id="sd" name="sd" type="text" value="salario diario" aria-label="Disabled input example" disabled readonly>
                                                                         </div>
                                                                         <br>
                                                                         <div class="form-group form-primary">
