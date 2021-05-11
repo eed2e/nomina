@@ -43,7 +43,7 @@ include "../conexion.php";
     <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <script src="js/bootstrap-datetimepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/picnic.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap/css/bootstrap.min.css">
 
 
 
@@ -333,50 +333,46 @@ include "../conexion.php";
                             
                                 </ul>
                             </li>-->
-                            </ul>
-                            <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Empleados</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li>
-                                    <a href="agregar_empleado.php" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Lista de empleados</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-
-
-                            </ul>
-
-                            <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Departamentos</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li>
-                                    <a href="departamento.php" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Departamentos</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-
-
-                            </ul>
-
-                            <div class="pcoded-navigation-label" data-i18n="nav.category.other">Nominas</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li>
-                                    <a href="deducciones.php" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>M</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">deducciones</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                    <a href="persepciones.php" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>M</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">persepciones</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a> <a href="pago.php" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>M</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">pago</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
+ </ul>
+                        <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Empleados</div>
+                        <ul class="pcoded-item pcoded-left-item">
+                            <li>
+                                <a href="agregar_empleado.php" class="waves-effect waves-dark">
+                                    <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Lista de empleados</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                            </li>
+                            
+                    
+                        </ul>
+                    
+                        <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Departamentos</div>
+                        <ul class="pcoded-item pcoded-left-item">
+                            <li>
+                                <a href="departamento.php" class="waves-effect waves-dark">
+                                    <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Departamentos</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                            </li>
+                            
+                    
+                        </ul>
+                    
+                        <div class="pcoded-navigation-label" data-i18n="nav.category.other">Nominas</div>
+                        <ul class="pcoded-item pcoded-left-item">
+                            <li>
+                                <a href="vacaciones.php" class="waves-effect waves-dark">
+                                    <span class="pcoded-micon"><i class="ti-truck"></i><b>M</b></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Vacaciones</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                                <a href="pago.php" class="waves-effect waves-dark">
+                                    <span class="pcoded-micon"><i class="ti-money"></i><b>M</b></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">pago</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
                                     <!--<ul class="pcoded-submenu">
                                     <li class="">
                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
@@ -501,7 +497,7 @@ include "../conexion.php";
                                             <p class="statusMsg"></p>
                                             <form action="add_empleado.php" method="POST" class="md-float-material form-material" enctype="multipart/form-data">
                                                 <div class="auth-box card">
-                                                    <div class="card-block">
+                                                    <div class="card-block" class="row">
                                                         <center>
                                                             <div style="width: 200px">
                                                                 <!-- this div just for demo display -->
@@ -541,7 +537,7 @@ include "../conexion.php";
                                                             <input class="form-control" id="sd" name="sd" type="text" placeholder="salario diario" aria-label="Disabled input example" disabled readonly>
                                                         </div>
                                                         <br>
-                                                        <div class="form-group form-primary">
+                                                        <div class="form-group form-primary" class="col">
                                                             <label for="fecha">
                                                                 Fecha de ingreso:<input type="date" name="fecha" id="fecha" style="border-radius:10px;" required>
                                                             </label>

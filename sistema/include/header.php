@@ -129,7 +129,7 @@ include "../conexion.php";
                             </div>
                         </div>
                     </div>
-                    <H5 style="color:white">DIGITALNET</h5>
+                    <H5 style="color:white">DIGITALNET</H5>
                 </div>
             
                 <div class="navbar-container container-fluid">
@@ -358,16 +358,12 @@ include "../conexion.php";
                         <div class="pcoded-navigation-label" data-i18n="nav.category.other">Nominas</div>
                         <ul class="pcoded-item pcoded-left-item">
                             <li>
-                                <a href="deducciones.php" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-arrow-down"></i><i class="ti-money"></i><b>M</b></span>
-                                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">deducciones</span>
+                                <a href="vacaciones.php" class="waves-effect waves-dark">
+                                    <span class="pcoded-micon"><i class="ti-truck"></i><b>M</b></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Vacaciones</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
-                                <a href="persepciones.php" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-arrow-up"></i><i class="ti-money"></i><b>M</b></span>
-                                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">persepciones</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a> <a href="pago.php" class="waves-effect waves-dark">
+                                <a href="pago.php" class="waves-effect waves-dark">
                                     <span class="pcoded-micon"><i class="ti-money"></i><b>M</b></span>
                                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">pago</span>
                                     <span class="pcoded-mcaret"></span>

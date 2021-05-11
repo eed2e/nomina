@@ -22,7 +22,7 @@ if (empty($_POST['id'] ) || empty($_POST['nombre'] )|| empty($_POST['ap'] )|| em
     $ap = $_POST['ap'];
     $am = $_POST['am'];
     $sm = $_POST['sm'];
-    $sd = $_POST['sd'];
+    $sd = $_POST['sm']/30.4;
     $fecha = $_POST['fecha'];
     $dep = $_POST['dep'];
     $status = 1;
