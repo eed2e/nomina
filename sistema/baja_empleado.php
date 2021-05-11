@@ -27,6 +27,6 @@ if (!empty($_GET['id'])) {
     mysqli_close($conexion);
    
     
-    header("location: agregar_empleados.php");
+    header("location: agregar_empleado.php");
 }
 ?>

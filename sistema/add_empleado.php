@@ -4,6 +4,19 @@ if (empty($_POST['id'] ) || empty($_POST['nombre'] )|| empty($_POST['ap'] )|| em
 
 }else{
     require("../conexion.php");
+    $tips = 'jpg';
+        $type = array ('image/jpg' => 'jpg');
+        $id = $_POST['id'];
+        $id = preg_replace('([^A-Za-z0-9])', '', $id);
+        
+        
+        $nombrefoto1 = $_FILES['image']['name'];
+        $ruta1 = $_FILES['image']['tmp_name'];
+        $name = $id.'A.'.$tips;
+        if(is_uploaded_file($ruta1)){
+            $destino = "imagenes_nomina/".$name;
+            copy($ruta1,$destino);
+        }
     $id = $_POST['id'];
     $nombre = $_POST['nombre'];
     $ap = $_POST['ap'];
@@ -16,8 +29,8 @@ if (empty($_POST['id'] ) || empty($_POST['nombre'] )|| empty($_POST['ap'] )|| em
 
    
     
-	    $sql = mysqli_query($conexion, "INSERT INTO empleados (id_empleado, nombre, apellido_paterno, apellido_materno, fecha_ingreso, sueldo_mensual, sueldo_diario, departamento, frecuencia_pago, status) 
-        VALUES ('$id','$nombre','$ap','$am','$fecha','$sm','$sd','$dep','$fp','$status')");
+	    $sql = mysqli_query($conexion, "INSERT INTO empleados (id_empleado, nombre, apellido_paterno, apellido_materno, fecha_ingreso, sueldo_mensual, sueldo_diario, departamento, frecuencia_pago, status,foto) 
+        VALUES ('$id','$nombre','$ap','$am','$fecha','$sm','$sd','$dep','$fp','$status','$destino')");
 
         
             
