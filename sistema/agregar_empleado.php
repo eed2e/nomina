@@ -462,7 +462,7 @@ include "../conexion.php";
                                                         } ?></td>
                                                     <td><a href="baja_empleado.php?id=<?php echo $data['id_empleado']; ?>" class="btn btn-danger" style="border-radius:20px">Baja </a>
                                                     <!-- Button to trigger modal -->
-                                                    <button class="btn waves-effect waves-light btn-grd-info btn-round" data-toggle="modal" data-target="#modal_editar">
+                                                    <button onclick="editar_empleado(<?php echo $data['id_empleado'];?>,<?php echo $data['departamento'];?>)" class="btn waves-effect waves-light btn-grd-info btn-round" data-toggle="modal" data-target="#modal_editar">
                                                         Editar
                                                     </button>
                                                        
@@ -486,7 +486,7 @@ include "../conexion.php";
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">
                                                 <span aria-hidden="true">X</span>
-                                                <span class="sr-only">Close</span>
+                                                <span class="sr-only">Cerrar</span>
                                             </button>
                                             <br>
                                             <h4 class="modal-title text-center" id="myModalLabel">Nuevo Empleado</h4>
@@ -583,7 +583,7 @@ include "../conexion.php";
 
                                         <!-- Modal Footer -->
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                                             <button type="submit" class="btn btn-primary submitBtn">Guardar</button>
                                         </div>
                                     </div>
@@ -599,16 +599,16 @@ include "../conexion.php";
                                                     <div class="modal-header">
                                                         <button type="button" class="close" data-dismiss="modal">
                                                             <span aria-hidden="true">X</span>
-                                                            <span class="sr-only">Close</span>
+                                                            <span class="sr-only">Cerrar</span>
                                                         </button>
                                                         <br>
-                                                        <h4 class="modal-title text-center" id="myModalLabel">Nuevo Empleado</h4>
+                                                        <h4 class="modal-title text-center" id="myModalLabel">Editar Empleado</h4>
                                                             
                                                         </div>
                                                     <!-- Modal Body -->
                                                     <div class="modal-body">
                                                         <p class="statusMsg"></p>
-                                                        <form action="add_empleado.php" method="POST" class="md-float-material form-material">
+                                                        <form action="editar_empleado.php" method="POST" class="md-float-material form-material">
                                                                 <div class="auth-box card">
                                                                     <div class="card-block">
                                                                         <center>
@@ -620,22 +620,22 @@ include "../conexion.php";
                                                                         </center>
 
                                                                         <div class="form-group form-primary">
-                                                                            <input type="text" name="id" id="id" class="form-control" required>
+                                                                            <input type="text" name="id_editar" id="id_editar" class="form-control">
                                                                             <span class="form-bar"></span>
                                                                             <label class="float-label">ID</label>
                                                                         </div>
                                                                         <div class="form-group form-primary">
-                                                                            <input type="text" name="nombre" id="nombre" class="form-control" required>
+                                                                            <input type="text" name="nombre_editar" id="nombre_editar" class="form-control" required>
                                                                             <span class="form-bar"></span>
                                                                             <label class="float-label">Nombre(s)</label>
                                                                         </div>
                                                                         <div class="form-group form-primary">
-                                                                            <input type="text" name="ap" id="ap" class="form-control" required>
+                                                                            <input type="text" name="ap_editar" id="ap_editar" class="form-control" required>
                                                                             <span class="form-bar"></span>
                                                                             <label class="float-label">Apellido Paterno</label>
                                                                         </div>
                                                                         <div class="form-group form-primary">
-                                                                            <input type="text" name="am" id="am" class="form-control" required>
+                                                                            <input type="text" name="am_editar" id="am_editar" class="form-control" required>
                                                                             <span class="form-bar"></span>
                                                                             <label class="float-label">Apellido Materno</label>
                                                                         </div>                                                       
@@ -695,7 +695,7 @@ include "../conexion.php";
                                                     
                                                     <!-- Modal Footer -->
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                                                         <button type="submit" class="btn btn-primary submitBtn" >Guardar</button>
                                                     </div>
                                                 </div>
@@ -766,6 +766,17 @@ include "../conexion.php";
             {
 
                 document.getElementById('sd').value = (document.getElementById('sm').value) / 30.4;
+
+            }
+
+            function editar_empleado(id,nombre)
+
+            {
+alert('nombre');
+                document.getElementById('id_editar').value = id;
+
+                
+                
 
             }
         </script>
