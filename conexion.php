@@ -15,5 +15,4 @@ date_default_timezone_set('America/Mexico_City');
 
     mysqli_set_charset($conexion,"utf8");
 
-
 ?>
