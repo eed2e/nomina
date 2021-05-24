@@ -88,7 +88,7 @@ if (!empty($_SESSION['active'])) {
         
       } else {
         $alert = '<div class="alert alert-danger" role="alert">
-              Usuario o Contraseña Incorrecta
+              Usuario o Contrase単a Incorrecta
             </div>';
         session_destroy();
       }
