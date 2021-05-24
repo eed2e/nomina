@@ -1,4 +1,4 @@
-<?php include_once "include/header.php"; ?>
+<?php include_once "includes/header.php"; ?>
 
 <!-- Begin Page Content -->
 <div class="content">
@@ -10,7 +10,7 @@
 
 	<!-- Content Row -->
 	<div class="row">
-	
+	<?PHP  if ($_SESSION['rol'] == 1) {?>
 		<!-- Earnings (Monthly) Card Example -->
 		<a class="col-xl-3 col-md-6 mb-4" href="lista_usuarios.php">
 			<div class="card border-left-primary shadow h-100 py-2">
@@ -45,11 +45,13 @@
 				</div>
 			</div>
 		</a>
-		
+		<?php } ?>
 		<!-- Earnings (Monthly) Card Example -->
-
+		<?PHP  if ($_SESSION['rol'] == 1) {?>
 		<a class="col-xl-3 col-md-6 mb-4" href="lista_productos.php">
-	
+		<?php }else{ ?>
+		<a class="col-xl-3 col-md-6 mb-4" href="lista_almacen.php">
+		<?php }?>
 			<div class="card border-left-info shadow h-100 py-2">
 				<div class="card-body">
 					<div class="row no-gutters align-items-center">
@@ -75,9 +77,11 @@
 		</a>
 
 		<!-- Pending Requests Card Example -->
-		
+		<?PHP  if ($_SESSION['rol'] == 1) {?>
 			<a class="col-xl-3 col-md-6 mb-4" href="ventas.php">
-		
+		<?php }else{ ?>
+			<a class="col-xl-3 col-md-6 mb-4" href="almacen.php">
+		<?php } ?>
 			<div class="card border-left-warning shadow h-100 py-2">
 				<div class="card-body">
 					<div class="row no-gutters align-items-center">
@@ -116,12 +120,14 @@
 				</div>
 			</div>
 		</div>
-	
+		<?php if ($_SESSION['rol'] == 1) { ?>
 
 				</div>
 			</div>
 
-		
+		<?php } ?>
 	</div>
 </div>
 <!-- End of Main Content -->
+
+<?php include_once "includes/footer.php"; ?>

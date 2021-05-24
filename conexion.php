@@ -1,9 +1,9 @@
 <?php
 date_default_timezone_set('America/Mexico_City');
     $host = "localhost";
-    $user = "root";
-    $clave = "";
-    $bd = "nomis";
+    $user = "inventar_1";
+    $clave = "12345";
+    $bd = "inventar_sis_venta";
 
     $conexion = mysqli_connect($host,$user,$clave,$bd);
     if (mysqli_connect_errno()){
@@ -14,5 +14,6 @@ date_default_timezone_set('America/Mexico_City');
     mysqli_select_db($conexion,$bd) or die("No se encuentra la base de datos");
 
     mysqli_set_charset($conexion,"utf8");
+
 
 ?>
