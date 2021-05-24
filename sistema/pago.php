@@ -7,7 +7,7 @@
                                 <div class="page-block">
                                     <!-- Button to trigger modal -->
                                     <button class="btn waves-effect waves-light btn-grd-info btn-round" data-toggle="modal" data-target="#modalForm">
-                                        Nuevo
+                                        Generar pago
                                     </button>
                                 </div>
                             </div>
@@ -49,10 +49,10 @@
                                                         } else {
                                                             echo "inactivo";
                                                         } ?></td>
-                                                    <td><a href="baja_empleado.php?id=<?php echo $data['id_empleado']; ?>" class="btn btn-danger" style="border-radius:20px">Baja </a>
+                                                    <td>
                                                     <!-- Button to trigger modal -->
-                                                    <button class="btn waves-effect waves-light btn-grd-info btn-round" data-toggle="modal" data-target="#modal_editar">
-                                                        Editar
+                                                    <button class="btn waves-effect waves-light btn-grd-info btn-round" data-toggle="modal" data-target="#modalForm">
+                                                    Configurar Nomina
                                                     </button>
                                                        
                                                     </td>
@@ -78,7 +78,7 @@
                                                 <span class="sr-only">Close</span>
                                             </button>
                                             <br>
-                                            <h4 class="modal-title text-center" id="myModalLabel">Nuevo Empleado</h4>
+                                            <h4 class="modal-title text-center" id="myModalLabel">Configurar Nomina</h4>
 
                                         </div>
                                         <!-- Modal Body -->
@@ -87,25 +87,74 @@
                                             <form action="add_empleado.php" method="POST" class="md-float-material form-material" enctype="multipart/form-data">
                                                 <div class="auth-box card">
                                                     <div class="card-block" class="row">
+                                                        <div class="card-block" class="row">
                                                         <center>
-                                                            <div style="width: 200px">
-                                                                <!-- this div just for demo display -->
-                                                                <label class="dropimage miniprofile" style=" border-radius: 50%; padding-bottom: 75%; heigth:2px; width:145px;">
-                                                                    <input name="image" title="Drop image or click me" type="file" id="imagen">
+                                                            <h4>Asistencia</h4>
+                                                        </center>
+                                                            <hr>
+                                                            <div class="form-check" >
+                                                            <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1">
+                                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                                Lunes
+                                                            </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                                Martes
+                                                            </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" name="flexRadioDefault"    id="flexRadioDefault2" checked>
+                                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                                    Miercoles
+                                                                </label>
+                                                            </div>                                                            
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" name="flexRadioDefault"    id="flexRadioDefault2" checked>
+                                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                                    Jueves
+                                                                </label>
+                                                            </div>                                                            
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" name="flexRadioDefault"    id="flexRadioDefault2" checked>
+                                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                                    Viernes
+                                                                </label>
+                                                            </div>                                                            
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" name="flexRadioDefault"    id="flexRadioDefault2" checked>
+                                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                                    Sabado
                                                                 </label>
                                                             </div>
+                                                            <div class="form-check">
+                                                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked >
+                                                                 <label class="form-check-label" for="flexCheckChecked">
+                                                                  Domingo
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <center>
+                                                            <h4>Persepciones</h4>
                                                         </center>
-
-                                                        <div class="form-group form-primary">
-                                                            <input type="text" name="id" id="id" class="form-control" required>
-                                                            <span class="form-bar"></span>
-                                                            <label class="float-label">ID</label>
+                                                        <hr>
+                                                        
+                                                        <div class="field_wrapper">
+                                                            <div class="form-group form-primary">
+                                                                
+                                                                <input type="text" name="field_name[]" class="form-control" placeholder="Nombre" value="" style="margin-left = 45%;" />
+                                                                <input type="text" name="field_name[]" class="form-control" placeholder="Cantidad" value="" style="margin-right = 45%;" />
+                                                                <br>
+                                                                <p></p>
+                                                                <center>
+                                                                    <a href="javascript:void(0);" class="add_button" title="Add field"><i class="ti-plus"></i></a>
+                                                                </center>
+                                                            </div>
                                                         </div>
-                                                        <div class="form-group form-primary">
-                                                            <input type="text" name="nombre" id="nombre" class="form-control" required>
-                                                            <span class="form-bar"></span>
-                                                            <label class="float-label">Nombre(s)</label>
-                                                        </div>
+                                                        <hr>
+                                                        <br>
                                                         <div class="form-group form-primary">
                                                             <input type="text" name="ap" id="ap" class="form-control" required>
                                                             <span class="form-bar"></span>
@@ -299,4 +348,26 @@
                     </div>
                 </div>
             </div>
+<script type="text/javascript">
+$(document).ready(function(){
+    var maxField = 99; //Input fields increment limitation
+    var addButton = $('.add_button'); //Add button selector
+    var wrapper = $('.field_wrapper'); //Input field wrapper
+    var fieldHTML = '<div><input type="text" name="field_name[]" class="form-control" placeholder="Nombre" value=""/><a href="javascript:void(0);" class="remove_button" title="Remove field"></i></a><i> </i><input type="text" name="field_name[]" class="form-control" placeholder="Nombre" value=""/><a href="javascript:void(0);" class="remove_button" title="Remove field"><center><i class="ti-trash"></i></center></a></div>';
+   
+    //New input field html 
+    var x = 1; //Initial field counter is 1
+    $(addButton).click(function(){ //Once add button is clicked
+        if(x < maxField){ //Check maximum number of input fields
+            x++; //Increment field counter
+            $(wrapper).append(fieldHTML); // Add field html
+        }
+    });
+    $(wrapper).on('click', '.remove_button', function(e){ //Once remove button is clicked
+        e.preventDefault();
+        $(this).parent('div').remove(); //Remove field html
+        x--; //Decrement field counter
+    });
+});
+</script>
         

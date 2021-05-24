@@ -36,8 +36,7 @@
                             <td><?php echo $data['fin_v']; ?></td>                           
                             <td><a href="baja_vacaciones.php?id=<?php echo $data['id_empleado']; ?>"style="border-radius:20px">Baja</a>
                             <!-- Button to trigger modal -->
-                                <button class="btn waves-effect waves-light btn-grd-info btn-round" dtarget="#modal_editar">Editar
-                                </button>
+                                <div onClick="loadDynamicContentModal('mysql')"class="btn waves-effect waves-light btn-grd-info btn-round">Editar</div>
                                                        
                             </td>
                         </tr>

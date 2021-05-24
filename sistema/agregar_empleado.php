@@ -462,7 +462,18 @@ include "../conexion.php";
                                                         } ?></td>
                                                     <td><a href="baja_empleado.php?id=<?php echo $data['id_empleado']; ?>" class="btn btn-danger" style="border-radius:20px">Baja </a>
                                                     <!-- Button to trigger modal -->
-                                                    <button onclick="editar_empleado(<?php echo $data['id_empleado'];?>,<?php echo $data['departamento'];?>)" class="btn waves-effect waves-light btn-grd-info btn-round" data-toggle="modal" data-target="#modal_editar">
+                                                     <button onclick='editar_empleado(
+                                                    <?php echo $data["id_empleado"];?> , 
+                                                    
+                                                    "<?php echo $data["nombre"];?>",
+                                                    "<?php echo $data["apellido_paterno"];?>",
+                                                    "<?php echo $data["apellido_materno"];?>",
+                                                    <?php echo $data["fecha_ingreso"];?>,
+                                                    <?php echo $data["sueldo_mensual"];?>,
+                                                    <?php echo $data["sueldo_diario"];?>,
+                                                    "<?php echo $data["departamento"];?>",
+                                                    "<?php  echo $data["frecuencia_pago"];?>",
+                                                    )', class="btn waves-effect waves-light btn-grd-info btn-round" data-toggle="modal" data-target="#modal_editar">
                                                         Editar
                                                     </button>
                                                        
@@ -613,9 +624,9 @@ include "../conexion.php";
                                                                     <div class="card-block">
                                                                         <center>
                                                                             <div style="width: 200px" > <!-- this div just for demo display -->
-                                                                                <label class="dropimage miniprofile" style=" border-radius: 50%; padding-bottom: 75%; heigth:2px; width:145px;">
-                                                                                <input name="image" title="Drop image or click me" type="file" id="imagen">
-                                                                                </label>
+                                                                                <td>
+                                                                                    <img width="130px" height="110px" src =" <?php echo  $data_producto['imagen'] ?> "></td>
+                                                                                    <input type="file" name="image" id="image">
                                                                             </div>
                                                                         </center>
 
@@ -640,23 +651,23 @@ include "../conexion.php";
                                                                             <label class="float-label">Apellido Materno</label>
                                                                         </div>                                                       
                                                                         <div class="form-group form-primary">
-                                                                            <input onblur = 'autorrelleno();' type="text" name="sm" id="sm" class="form-control" required>
+                                                                            <input onblur = 'autorrelleno();' type="text" name="sm_editar" id="sm_editar" class="form-control" required>
                                                                             <span class="form-bar"></span>
                                                                             <label class="float-label" >Sueldo Mensual</label>
                                                                         </div>
                                                                         <div>
                                                                             <p>Salario diario</p>
-                                                                            <input class="form-control" id="sd" name="sd" type="text" value="salario diario" aria-label="Disabled input example" disabled readonly>
+                                                                            <input class="form-control" id="sd_editar" name="sd_editar" type="text" value="salario diario" aria-label="Disabled input example" disabled readonly>
                                                                         </div>
                                                                         <br>
                                                                         <div class="form-group form-primary">
                                                                             <label for="fecha" >
-                                                                            Fecha de ingreso:<input type="date" name="fecha" id= "fecha" style = "border-radius:10px;" required >
+                                                                            Fecha de ingreso:<input type="date" name="fecha_editar" id= "fecha_editar" style = "border-radius:10px;" required >
                                                                             </label>
                                                                         </div>
                                                                         <div>
                                                                             <p>Departamento</p>
-                                                                                <select class="form-select" aria-label="Default select example" id="dep" name="dep" style=" border-radius:10px;" required>
+                                                                                <select class="form-select" aria-label="Default select example" id="dep_editar" name="dep_editar" style=" border-radius:10px;" required>
                                                                                    
                                                                                     <?php
                                                                                         include "../conexion.php";
@@ -769,19 +780,25 @@ include "../conexion.php";
 
             }
 
-            function editar_empleado(id,nombre)
+            function editar_empleado(id,nombre,apellido_paterno,apellido_materno,fecha_ingreso,sueldo_mensual,sueldo_diario,departamento)
 
             {
-alert('nombre');
+                
                 document.getElementById('id_editar').value = id;
-
-                
-                
+                //document.getElementById('imagen_editar').value = foto;
+                document.getElementById('nombre_editar').value = nombre;
+                document.getElementById('ap_editar').value = apellido_paterno;
+                document.getElementById('am_editar').value = apellido_materno;
+                document.getElementById("fecha_editar").innerHTML= fecha_ingreso;     
+                document.getElementById('sm_editar').value = sueldo_mensual;
+                document.getElementById('sd_editar').value = sueldo_diario;
+                document.getElementById('dep_editar').value = departamento;
 
             }
         </script>
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
+            document.addEventListener("DOMContentLoaded", function(foto) {
+                
                 [].forEach.call(document.querySelectorAll('.dropimage'), function(img) {
                     img.onchange = function(e) {
                         var inputfile = this,
