@@ -1,6 +1,7 @@
 <?php
 $alert = '';
 session_start();
+require("conexion.php");
 if (!empty($_SESSION['active'])) {
   header('location: sistema/');
 } else {
@@ -10,219 +11,248 @@ if (!empty($_SESSION['active'])) {
   Ingrese su usuario y su clave
 </div>';
     }else {
-      require_once "conexion.php";
-	$hoy = date("Y-m-d H:i:s");
-	$m = date('d', strtotime($hoy));
-	$sqlie= mysqli_query($conexion, "SELECT * FROM factura");
-	
-	
-	while ($datte = mysqli_fetch_assoc($sqlie)) {
-		  $ff = $datte['fecha'];
-		  $nf = $datte['nofactura'];
-		  $f = date('d', strtotime($ff));
-		  
-		  if($m != $f){
-			  
-			  $sqlii= mysqli_query($conexion, "SELECT * FROM detallefactura WHERE nofactura= $nf");
-			  while ($dattaa = mysqli_fetch_assoc($sqlii)) {
-			  
-				  $mm = $dattaa['cantidad'];
-				  $c = $dattaa['codproducto'];
-				  $sqlp= mysqli_query($conexion, "SELECT * FROM producto WHERE codproducto = $c ");
-				  $dataprod = mysqli_fetch_assoc($sqlp);
-				  $stock = $dataprod['existencia'];
-				  $stok = $stock + $mm;
-				  
-				
-				  $sqliinser = mysqli_query($conexion, "UPDATE producto SET existencia = $stok WHERE codproducto = $c");
-
-				  
-				  $sqleliminar = mysqli_query($conexion, "DELETE FROM detallefactura WHERE nofactura= $nf");
-				  
-			  }
-			  $sqleliminarfac = mysqli_query($conexion, "DELETE FROM factura WHERE nofactura= $nf");
-		  }
-		  
-  }
-	    
-      
-      
-      $user = mysqli_real_escape_string($conexion, $_POST['usuario']);
-      $clave = mysqli_real_escape_string($conexion, $_POST['clave']);
-      if(isset($_POST['g-recaptcha-response'])){
-          $captcha=$_POST['g-recaptcha-response'];
-        }
-        if(!$captcha){
-         $alert = '<div class="alert alert-danger" role="alert">
-              capchat incompleto
-            </div>';
-        session_destroy();
+      $user = $_POST['usuario'];
+      $clave = $_POST['clave'];
+    $query = mysqli_query($conexion, "SELECT pass, id,rol, nombre FROM usuarios WHERE nombre = '$user'");
+    $data = mysqli_fetch_assoc($query);
+        $pass= $data[pass];
+        $idd= $data[id];
+        $user= $data[nombre];
+        $rol=$data[rol];
+        if ($clave == "$pass") {
        
-        }
-        $secretKey = "Put your secret key here";
-        $ip = $_SERVER['REMOTE_ADDR'];
-        // post request to server
-        $url = 'https://www.google.com/recaptcha/api/siteverify?secret=6LfWJKMaAAAAAPEF_LMjnHg-s8WzkDLmsOyJqnrP' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
-        $response = file_get_contents($url);
-        $responseKeys = json_decode($response,true);
-        // should return JSON with success as true
-        if($responseKeys["success"]) {
-                echo '<h2>Thanks for posting comment</h2>';
-        } else {
-                     $alert = '<div class="alert alert-danger" role="alert"> complete el recaptchat</div>';
-        }
-      $query = mysqli_query($conexion, "SELECT u.idusuario, u.nombre, u.correo,u.usuario,r.idrol,r.rol FROM usuario u INNER JOIN rol r ON u.rol = r.idrol WHERE u.usuario = '$user' AND u.clave = '$clave'");
-      mysqli_close($conexion);
-      $resultado = mysqli_num_rows($query);
-      if ($resultado > 0) {
-        $dato = mysqli_fetch_array($query);
-        $_SESSION['active'] = true;
-        $_SESSION['idUser'] = $dato['idusuario'];
-        $_SESSION['nombre'] = $dato['nombre'];
-        $_SESSION['email'] = $dato['correo'];
-        $_SESSION['user'] = $dato['usuario'];
-        $_SESSION['rol'] = $dato['idrol'];
-        $_SESSION['rol_name'] = $dato['rol'];
-        
-        header('location: sistema/index.php');
+            $_SESSION['active'] = true;
+            $_SESSION['id'] = $idd;
+            $_SESSION['nombre'] = $user;
+            $_SESSION['rol'] = $rol;
+
+            header('location: sistema/');
         
       } else {
         $alert = '<div class="alert alert-danger" role="alert">
-              Usuario o Contrase単a Incorrecta
+              Usuario o Contraseña Incorrecta
             </div>';
         session_destroy();
       }
     }
   }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head><meta charset="euc-jp">
+    <title>Nomina </title>
+    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 10]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    <!-- Meta -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Mega Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+    <meta name="author" content="codedthemes" />
+    <!-- Favicon icon -->
 
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>DigitalNet Inventario</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="sistema/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <!-- Custom styles for this template-->
-  <link href="sistema/css/sb-admin-2.min.css" rel="stylesheet">
-  <script src='https://www.google.com/recaptcha/api.js'></script>
-  
-  <style type="text/css">
-  body {
-  background-image: url("sistema/img/logo1.jpg");
-  
-}
-</style>
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap/css/bootstrap.min.css">
+    <!-- waves.css -->
+    <link rel="stylesheet" href="assets/pages/waves/css/waves.min.css" type="text/css" media="all">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/themify-icons/themify-icons.css">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/font-awesome/css/font-awesome.min.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
-<body >
-
-  <div class="container">
-
-    
-    <div class="row justify-content-center ">
-
-      <div class="col-xl-10 col-lg-12 col-md-9">
-
-        <div class="card o-hidden border-4 shadow-lg my-5">
-        
-          <div class="card-body p-0">
-
-            <div class="row">
-              <div class="col-lg-6 d-none d-lg-block ">
-                  <br>
-                  <br>
-                  <br><br>
-                  <br>
-                  <br>
-                  <br>
-                  <div>
-                <img src="sistema/img/logo_ok.jpg" width="800px" height="1000px" class="img-thumbnail center">
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Iniciar Sesion</h1>
-                  </div>
-                  <form class="user" method="POST">
-                    <?php echo isset($alert) ? $alert : ""; ?>
-                    <div class="form-group">
-                      <label for="">Usuario</label>
-                      <input type="text" class="form-control" placeholder="Usuario" name="usuario"></div>
-                    <div class="form-group">
-                      <label for="">Contraseña</label>
-                      <input type="password" class="form-control" placeholder="Contraseña" name="clave">
+<body themebg-pattern="theme1">
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="loader-track">
+            <div class="preloader-wrapper">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
                     </div>
-                     <div class="form-group">
-                                            <div class="col-md-9"><div class="g-recaptcha" data-sitekey="6LfWJKMaAAAAANgy3mGBQqfkOsqWhsKCEGmIGua9"></div></div>
-                                        </div>
-
-						<script type="text/javascript">
-					
-						         grecaptcha.ready(function() {
-						              grecaptcha.execute('reCAPTCHA_site_key', {action: 'homepage'}).then(function(token) {
-						              });
-						          });
-						        function getUrlVars() {
-						            var vars = {};
-						            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-						                vars[key] = value;
-						            });
-						            return vars;
-						       			 }
-						
-						        var error = getUrlVars()["error"];
-						        window.onload=function(){
-						            if(error=="1"){
-						                alert("Nombre y contrase���a incorrectos, por favor vuelva a intentarlo.");
-						                return false;
-						            } else if(error=="2"){
-						                alert("No existe la sesi���n, por favor ingrese nuevamente sus datos.");
-						                return false;
-						            } else if(error=="3"){
-						                alert("Usted no tiene permisos para ingresar a esta secci���n. Por favor, vuelva a ingresar.");
-						                return false;
-						            } else if(error=="4"){
-						                alert("Usted no tiene permisos para ingresar a esta secci���n.");
-							                return false;
-							            }
-						        };
-						    </script>
-                    <input type="submit" value="Iniciar" class="btn btn-primary">
-                    <hr>
-                  </form>
-                  <hr>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
                 </div>
-              </div>
+                <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+                <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+                <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-
-      </div>
-
     </div>
+    <!-- Pre-loader end -->
 
-  </div>
+    <section class="login-block">
+        <!-- Container-fluid starts -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- Authentication card start -->
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="sistema/vendor/jquery/jquery.min.js"></script>
-  <script src="sistema/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                    <form action="" method="post" class="md-float-material form-material">
+                        <div class="text-center">
+                        </div>
+                        <div class="auth-box card">
+                            <div class="card-block">
+                                <div class="row m-b-20">
+                                    <div class="col-md-12">
 
-  <!-- Core plugin JavaScript-->
-  <script src="sistema/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="sistema/js/sb-admin-2.min.js"></script>
+                                        <h3 class="text-center"><img src="img/logo_ok.jpg" style="height: 100px;  width: 200px;"></h3>
+                                    </div>
+                                </div>
 
+                                <div class="form-group form-primary">
+                                    <input type="text" name="usuario" id="usuario" class="form-control" required="">
+                                    <span class="form-bar"></span>
+                                    <label class="float-label">nombre</label>
+                                </div>
+                                <div class="form-group form-primary">
+                                    <input type="password" name="clave" id="clave" class="form-control" required="">
+                                    <span class="form-bar"></span>
+                                    <label class="float-label">Password</label>
+                                </div>
+                                <div class="row m-t-25 text-left">
+                                    <div class="col-12">
+
+                                    </div>
+                                </div>
+                                <div class="row m-t-30">
+                                    <div class="col-md-12">
+
+                                        <button type="submit" class="btn btn-primary btn-md btn-block text-center m-b-20">iniciar</button>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="row">
+
+                                    <div class="col-md-2">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- end of form -->
+                </div>
+                <!-- end of col-sm-12 -->
+            </div>
+            <!-- end of row -->
+        </div>
+        <!-- end of container-fluid -->
+    </section>
+    <!-- Warning Section Starts -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 10]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="assets/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="assets/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="assets/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="assets/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="assets/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+    <!-- Warning Section Ends -->
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-ui/jquery-ui.min.js "></script>
+    <script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap/js/bootstrap.min.js "></script>
+    <!-- waves js -->
+    <script src="assets/pages/waves/js/waves.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="assets/js/jquery-slimscroll/jquery.slimscroll.js "></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="assets/js/SmoothScroll.js"></script>
+    <script src="assets/js/jquery.mCustomScrollbar.concat.min.js "></script>
+    <!-- i18next.min.js -->
+    <script type="text/javascript" src="bower_components/i18next/js/i18next.min.js"></script>
+    <script type="text/javascript" src="bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js"></script>
+    <script type="text/javascript" src="bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
+    <script type="text/javascript" src="assets/js/common-pages.js"></script>
 </body>
 
 </html>
