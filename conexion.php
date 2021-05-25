@@ -1,9 +1,9 @@
 <?php
 date_default_timezone_set('America/Mexico_City');
     $host = "localhost";
-    $user = "inventar_1";
-    $clave = "12345";
-    $bd = "inventar_nomis";
+    $user = "root";
+    $clave = "";
+    $bd = "nomis";
 
     $conexion = mysqli_connect($host,$user,$clave,$bd);
     if (mysqli_connect_errno()){
